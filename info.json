@@ -1,0 +1,8 @@
+{
+    "author" : ["sprite"],
+    "install_msg" : "Message the user will recieve when they agree to install your repository.",
+    "name" : "Lancer Cogs",
+    "short" : "Cogs developed by sprite for personal use",
+    "description" : "Cogs developed by sprite for personal use",
+    "tags" : ["List of search tags on red portal for your repo."]
+}
