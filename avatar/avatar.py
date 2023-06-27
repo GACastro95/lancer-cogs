@@ -11,7 +11,7 @@ class Avatar(commands.Cog):
     """Get user's avatar URL."""
 
     @commands.command()
-    async def avatar(self, ctx, *, user: discord.Member=None):
+    async def avatar(self, ctx, *, user: discord.Member=None, server=None):
         """Returns user avatar URL.
 
         User argument can be user mention, nickname, username, user ID.
@@ -22,9 +22,15 @@ class Avatar(commands.Cog):
         if not user:
             user = author
 
-        if (user.avatar.is_animated()):
-            url = user.avatar.with_static_format("gif")
-        else:
-            url = user.avatar.with_static_format("png")
+        if not server or server == "global":
+            if (user.avatar.is_animated()):
+                url = user.avatar.with_static_format("gif")
+            else:
+                url = user.avatar.with_static_format("png")
+        elif server == "server":
+            if (user.avatar.is_animated()):
+                url = user.display_avatar.with_static_format("gif")
+            else:
+                url = user.display_avatar.with_static_format("png")
 
         await ctx.send(f"{user}'s Avatar URL : {url}")
