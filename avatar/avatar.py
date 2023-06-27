@@ -11,7 +11,7 @@ class Avatar(commands.Cog):
     """Get user's avatar URL."""
 
     @commands.command()
-    async def avatar(self, ctx, user: discord.Member=None, server=None):
+    async def avatar(self, ctx, server=None, user: discord.Member=None):
         """Returns user avatar URL.
 
         User argument can be user mention, nickname, username, user ID.
