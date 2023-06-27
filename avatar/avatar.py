@@ -28,8 +28,8 @@ class Avatar(commands.Cog):
             avatar = user.display_avatar
             
         if (avatar.is_animated()):
-            url = user.display_avatar.with_static_format("gif")
+            url = avatar.with_static_format("gif")
         else:
-            url = user.display_avatar.with_static_format("png")
+            url = avatar.with_static_format("png")
 
         await ctx.send(f"{user}'s Avatar URL : {url}")
