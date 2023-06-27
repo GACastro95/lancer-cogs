@@ -23,14 +23,13 @@ class Avatar(commands.Cog):
             user = author
 
         if not server or server == "global":
-            if (user.avatar.is_animated()):
-                url = user.avatar.with_static_format("gif")
-            else:
-                url = user.avatar.with_static_format("png")
+            avatar = user.avatar
         elif server == "server":
-            if (user.avatar.is_animated()):
-                url = user.display_avatar.with_static_format("gif")
-            else:
-                url = user.display_avatar.with_static_format("png")
+            avatar = user.display_avatar
+            
+        if (avatar.is_animated()):
+            url = user.display_avatar.with_static_format("gif")
+        else:
+            url = user.display_avatar.with_static_format("png")
 
         await ctx.send(f"{user}'s Avatar URL : {url}")
