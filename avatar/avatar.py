@@ -1,14 +1,17 @@
+# Simple avatar URL fetch
+
+# Discord
 import discord
 
+# Red
 from redbot.core import commands
 
 
-# Classname should be CamelCase and the same spelling as the folder
 class Avatar(commands.Cog):
-    """Description of the cog visible with [p]help MyFirstCog"""
+    """Get user's avatar URL."""
 
     @commands.command()
-    async def avatar(self, ctx, *, user: discord.Member = None):
+    async def avatar(self, ctx, *, user: discord.Member=None):
         """Returns user avatar URL.
 
         User argument can be user mention, nickname, username, user ID.
