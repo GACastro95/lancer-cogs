@@ -10,7 +10,7 @@ class Avatar(commands.Cog):
         """Returns user avatar URL."""
         pass
 
-    @avatar.hybrid_command(name="server")
+    @avatar.command(name="server")
     async def _server_avatar(self, ctx, *, user: discord.Member=None):
         """Returns server user avatar.
 
@@ -19,7 +19,7 @@ class Avatar(commands.Cog):
         """
         await self.get_avatar(ctx, "server", user)
 
-    @avatar.hybrid_command(name="global")
+    @avatar.command(name="global")
     async def _global_avatar(self, ctx, *, user: discord.Member=None):
         """Returns the global user avatar.
 
