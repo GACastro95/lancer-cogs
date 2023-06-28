@@ -1,21 +1,16 @@
 # Simple avatar URL fetch
-
-# Discord
 import discord
-
-# Red
 from redbot.core import commands
-
 
 class Avatar(commands.Cog):
     """Get user's avatar URL."""
 
-    @commands.group()
+    @commands.hybrid_group()
     async def avatar(self, ctx: commands.Context) -> None:
         """Returns user avatar URL."""
         pass
 
-    @avatar.command(name="server")
+    @avatar.hybrid_command(name="server")
     async def _server_avatar(self, ctx, *, user: discord.Member=None):
         """Returns server user avatar.
 
@@ -24,7 +19,7 @@ class Avatar(commands.Cog):
         """
         await self.get_avatar(ctx, "server", user)
 
-    @avatar.command(name="global")
+    @avatar.hybrid_command(name="global")
     async def _global_avatar(self, ctx, *, user: discord.Member=None):
         """Returns the global user avatar.
 
