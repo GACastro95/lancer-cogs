@@ -1,9 +1,8 @@
-# Simple avatar URL fetch
 import discord
 import re
 from redbot.core import commands
 
-class Avatar(commands.Cog):
+class VxTwitter(commands.Cog):
     """Get user's avatar URL."""
 
     @commands.hybrid_command()

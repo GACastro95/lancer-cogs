@@ -1,5 +1,5 @@
-from .avatar import Avatar
+from .vxtwitter import VxTwitter
 
 
 async def setup(bot):
-    await bot.add_cog(Avatar())
+    await bot.add_cog(VxTwitter())
