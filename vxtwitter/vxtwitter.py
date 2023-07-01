@@ -14,7 +14,7 @@ class VxTwitter(commands.Cog):
 
     async def validate_url(self, ctx, url):
         subst = "https://vxtwitter.com"
-        regex = r"((https?):\/\/)?(www.)?twitter\.com(\/@?(\w){1,15})\/status\/[0-9]{19}\?"
+        regex = r"((https?):\/\/)?(www.)?twitter\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
         matches = re.search(regex, url)
         if matches:
             regex_rm = r"((https?):\/\/)?(www.)?twitter\.com"
