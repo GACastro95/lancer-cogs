@@ -1,7 +1,7 @@
 {
     "author" : ["sprite"],
     "install_msg" : "A message you wish to display to users after they sucessfully install your cog.",
-    "name" : "VxTwitter",
+    "name" : "Vxtwitter",
     "short" : "A short description. Displayed in the `[p]cog list` command.",
     "description" : "Full description of your cog. Displayed on the Red Portal and with `[p]cog info`"
 }
