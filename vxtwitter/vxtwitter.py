@@ -21,7 +21,7 @@ class VxTwitter(commands.Cog):
             result = re.sub(regex_rm, subst, url.split("?")[0], 1)
             await ctx.send(result)
         else:
-            await ctx.send("This is not a tweet")
+            await ctx.send("This is not a tweet", ephemeral=True)
         
         # if not tweet:
         #     await ctx.send("Tweet not found.")
