@@ -13,6 +13,7 @@ class VxTwitter(commands.Cog):
 
 
     async def validate_url(self, ctx, url):
+        print("test")
         url_extract_pattern = "((https?):\/\/)?(www.)?twitter\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
         tweet = re.findall(url_extract_pattern, url)
         print(tweet)
