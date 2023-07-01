@@ -8,7 +8,7 @@ class VxTwitter(commands.Cog):
     @commands.hybrid_command()
     async def twitter(self, ctx, url):
         """Returns user avatar URL."""
-        self.validate_url(ctx, url)
+        await self.validate_url(ctx, url)
 
 
 
