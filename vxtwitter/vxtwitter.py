@@ -16,9 +16,9 @@ class VxTwitter(commands.Cog):
         url_extract_pattern = "((https?):\/\/)?(www.)?twitter\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
         tweet = re.findall(url_extract_pattern, url)
         print(tweet)
-        if not tweet:
-            await ctx.send("Tweet not found.")
-        else:
-            print(tweet[0])
-            vx = tweet[0].split("https://")
-            await ctx.send(f"{vx[0]}vx{vx[1]}")
+        # if not tweet:
+        #     await ctx.send("Tweet not found.")
+        # else:
+        #     print(tweet[0])
+        #     vx = tweet[0].split("https://")
+        #     await ctx.send(f"{vx[0]}vx{vx[1]}")
