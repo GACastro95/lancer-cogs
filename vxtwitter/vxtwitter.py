@@ -17,6 +17,7 @@ class VxTwitter(commands.Cog):
         regex = r"((https?):\/\/)?(www.)?twitter\.com(\/@?(\w){1,15})\/status\/[0-9]{19}\?"
         matches = re.search(regex, url)
         if matches:
+            print(url)
             result = re.sub(regex, subst, url, 1)
             await ctx.send(result)
         else:
