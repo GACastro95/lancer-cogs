@@ -13,9 +13,15 @@ class VxTwitter(commands.Cog):
 
 
     async def validate_url(self, ctx, url):
-        url_extract_pattern = r"((https?):\/\/)?(www.)?twitter\.com(\/@?(\w){1,15})\/status\/[0-9]{19}\?"
-        tweet = re.findall(url_extract_pattern, url)
-        print(tweet)
+        subst = "https://vxtwitter.com"
+        regex = r"((https?):\/\/)?(www.)?twitter\.com(\/@?(\w){1,15})\/status\/[0-9]{19}\?"
+        matches = re.search(regex, url)
+        if matches:
+            result = re.sub(regex, subst, url, 1)
+            await ctx.send(result)
+        else:
+            await ctx.send("This is not a tweet")
+        
         # if not tweet:
         #     await ctx.send("Tweet not found.")
         # else:
