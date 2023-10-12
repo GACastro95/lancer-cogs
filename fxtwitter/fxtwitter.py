@@ -12,7 +12,7 @@ class FxTwitter(commands.Cog):
         regex = r"((https?):\/\/)?(www.)?(x|twitter?)\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
         matches = re.search(regex, url)
         if matches:
-            regex_rm = r"((https?):\/\/)?(www.)?twitter\.com"
+            regex_rm = r"((https?):\/\/)?(www.)?(x|twitter?)\.com"
             result = re.sub(regex_rm, subst, url.split("?")[0], 1)
             await ctx.send(result, ephemeral=True)
         else:
