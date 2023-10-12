@@ -6,7 +6,7 @@ class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
 
     @commands.hybrid_command()
-    async def twitter(self, ctx, url, download):
+    async def twitter(self, ctx, url):
         """Returns Fxtwitter Link."""
         subst = "https://fxtwitter.com"
         regex = r"((https?):\/\/)?(www.)?(x|twitter?)\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
