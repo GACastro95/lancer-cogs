@@ -14,6 +14,6 @@ class FxTwitter(commands.Cog):
         if matches:
             regex_rm = r"((https?):\/\/)?(www.)?twitter\.com"
             result = re.sub(regex_rm, subst, url.split("?")[0], 1)
-            await ctx.send("Here is the link to your tweet to post " + result, ephemeral=True)
+            await ctx.send(result, ephemeral=True)
         else:
             await ctx.send("This is not a tweet", ephemeral=True)
