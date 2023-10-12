@@ -6,7 +6,7 @@ class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
 
     @commands.hybrid_command()
-    async def twitter(self, ctx, url):
+    async def twitter(self, ctx, url, download):
         """Returns Fxtwitter Link."""
         subst = "https://fxtwitter.com"
         regex = r"((https?):\/\/)?(www.)?(x|twitter?)\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
@@ -14,6 +14,6 @@ class FxTwitter(commands.Cog):
         if matches:
             regex_rm = r"((https?):\/\/)?(www.)?(x|twitter?)\.com"
             result = re.sub(regex_rm, subst, url.split("?")[0], 1)
-            await ctx.send(result, ephemeral=True)
+            await ctx.send(f'Here is your fxtweet: <{result}>', ephemeral=True)
         else:
             await ctx.send("This is not a tweet", ephemeral=True)
