@@ -9,7 +9,7 @@ class FxTwitter(commands.Cog):
     async def twitter(self, ctx, url):
         """Returns Fxtwitter Link."""
         subst = "https://fxtwitter.com"
-        regex = r"((https?):\/\/)?(www.)?twitter\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
+        regex = r"((https?):\/\/)?(www.)?(x|twitter?)\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
         matches = re.search(regex, url)
         if matches:
             regex_rm = r"((https?):\/\/)?(www.)?twitter\.com"
