@@ -2,13 +2,17 @@ import discord
 import re
 from redbot.core import commands
 
+
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
 
     @commands.hybrid_command()
-    async def twitter(self, ctx, url):
+    async def twitter(self, ctx, url, download: bool):
         """Returns Fxtwitter Link."""
-        subst = "https://fxtwitter.com"
+        if download:
+            subst = "https://dl.fxtwitter.com"
+        else:
+            subst = "https://fxtwitter.com"
         regex = r"((https?):\/\/)?(www.)?(x|twitter?)\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
         matches = re.search(regex, url)
         if matches:
