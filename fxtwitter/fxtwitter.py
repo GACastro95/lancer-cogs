@@ -8,7 +8,7 @@ from typing import Optional
 class ButtonMenu(View):
     @discord.ui.button(style=discord.ButtonStyle.red, emoji="🗑")
     async def delete(self, interaction, button):
-        message = interaction.original_response()
+        message = await interaction.original_response()
         if interaction.user.id == message.author.id:
             await interaction.response.defer()
             await interaction.delete_original_response()
