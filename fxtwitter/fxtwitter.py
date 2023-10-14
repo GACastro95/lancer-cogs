@@ -1,13 +1,14 @@
 import discord
 import re
 from redbot.core import commands
+from typing import Optional
 
 
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
 
     @commands.hybrid_command()
-    async def twitter(self, ctx, url, download: bool = False):
+    async def twitter(self, ctx, url, download: Optional[bool] = False):
         """Returns Fxtwitter Link."""
         if download:
             subst = "https://dl.fxtwitter.com"
