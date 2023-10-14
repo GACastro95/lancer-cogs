@@ -6,12 +6,8 @@ from redbot.core import commands
 from typing import Optional
 
 class ButtonMenu(View):
-    def __init__(self):
-        super().__init__()
-    
-    @discord.ui.button(style=discord.ButtonStyle.red, emoji="🗑")
-    async def delete(self, interaction: discord.Interaction):
-        await interaction.response.defer()
+    @discord.ui.button(label="Delete")
+    async def delete(self, interaction, button):
         await interaction.response.send_message("Test")
          
 class FxTwitter(commands.Cog):
