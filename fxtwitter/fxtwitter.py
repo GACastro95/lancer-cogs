@@ -9,12 +9,10 @@ class ButtonMenu(View):
         super().__init__()
 
         # Create buttons
-        self.button1 = Button(style=discord.ButtonStyle.primary, label="Button 1")
-        self.button2 = Button(style=discord.ButtonStyle.primary, label="Button 2")
+        self.button1 = Button(style=discord.ButtonStyle.red, emoji="🗑")
 
         # Add buttons to the view
         self.add_item(self.button1)
-        self.add_item(self.button2)
 
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
