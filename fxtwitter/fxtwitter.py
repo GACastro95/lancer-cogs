@@ -8,9 +8,8 @@ from typing import Optional
 class ButtonMenu(View):
     @discord.ui.button(style=discord.ButtonStyle.red, emoji="🗑")
     async def delete(self, interaction, button):
-        if interaction.user.id == interaction.message.author.id:
-            await interaction.response.defer()
-            await interaction.delete_original_response()
+        await interaction.response.defer()
+        await interaction.delete_original_response()
          
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
