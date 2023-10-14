@@ -8,7 +8,7 @@ from typing import Optional
 class ButtonMenu(View):
     @discord.ui.button(style=discord.ButtonStyle.red, emoji="🗑")
     async def delete(self, interaction, button):
-        if interaction.user.id != interaction.message.author.id:
+        if interaction.user.id != interaction.message.interaction.user.id:
             await interaction.response.send_message(
                 ("You are not the author of this command."), ephemeral=True
             )
