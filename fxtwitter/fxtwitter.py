@@ -9,14 +9,13 @@ class ButtonMenu(View):
         super().__init__()
 
         # Create buttons
-        self.delete = Button(style=discord.ButtonStyle.red, emoji="🗑", custom_id="delete")
+        self.delete = Button(style=discord.ButtonStyle.red, emoji="🗑")
 
         # Add buttons to the view
         self.add_item(self.delete)
     
     async def on_button_click(self, interaction: discord.Interaction):
-         if interaction.custom_id == 'delete':
-              await interaction.message.delete()
+        await interaction.message.delete()
          
          
 
