@@ -8,20 +8,19 @@ from typing import Optional
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
 
-    button = Button(label="Click me!",
-                    style=discord.ButtonStyle.red, emoji="🗑")
-
-    # async def button_callback(interaction):
-    #     await interaction.delete()
-    # button.callback = button_callback
-    view = View()
-    view.add_item(button)
-
     @commands.hybrid_command()
     async def twitter(self, ctx, url, download: Optional[bool] = False):
         """Returns Fxtwitter Link."""
+        button = Button(label="Click me!",
+                    style=discord.ButtonStyle.red, emoji="🗑")
+
+        # async def button_callback(interaction):
+        #     await interaction.delete()
+        # button.callback = button_callback
+        view = View()
+        view.add_item(button)
         if download:
-            subst = "https://dl.fxtwitter.com"
+                subst = "https://dl.fxtwitter.com"
         else:
             subst = "https://fxtwitter.com"
         regex = r"((https?):\/\/)?(www.)?(x|twitter?)\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
