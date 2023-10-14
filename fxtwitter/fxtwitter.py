@@ -29,6 +29,7 @@ class FxTwitter(commands.Cog):
         if matches:
             regex_rm = r"((https?):\/\/)?(www.)?(x|twitter?)\.com"
             result = re.sub(regex_rm, subst, url.split("?")[0], 1)
-            await ctx.send(result, view=CustomView())
+            view = CustomView()
+            await ctx.send(result, view=view)
         else:
             await ctx.send("This is not a tweet", ephemeral=True)
