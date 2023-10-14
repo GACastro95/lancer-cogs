@@ -6,9 +6,14 @@ from redbot.core import commands
 from typing import Optional
 
 class ButtonMenu(View):
+    def __init__(self, timeout, member):
+        super().__init__(timeout=timeout)
+        self.member = member
+        self.value = None
+
     @discord.ui.button(style=discord.ButtonStyle.red, emoji="🗑")
     async def delete(self, interaction, button):
-        if interaction.user.id != interaction.message.interaction.user.id:
+        if interaction.user.id != self.member.id:
             await interaction.response.send_message(
                 ("You are not the author of this command."), ephemeral=True
             )
@@ -31,7 +36,7 @@ class FxTwitter(commands.Cog):
         if matches:
             regex_rm = r"((https?):\/\/)?(www.)?(x|twitter?)\.com"
             result = re.sub(regex_rm, subst, url.split("?")[0], 1)
-            menu = ButtonMenu(timeout=None)
+            menu = ButtonMenu(timeout=None, member=ctx.author)
             await ctx.send(result, view=menu)
         else:
             await ctx.send("This is not a tweet", ephemeral=True)
