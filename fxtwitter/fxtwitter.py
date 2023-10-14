@@ -11,8 +11,7 @@ class ButtonMenu(View):
         self.add_item(self.delete)
     
     async def on_button_click(self, interaction: discord.Interaction):
-        await interaction.response.defer()
-        await interaction.delete_original_response()
+        await interaction.response.send_message("Button 3 clicked!")
          
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
