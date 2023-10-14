@@ -10,8 +10,7 @@ class ButtonMenu(View):
     
     @discord.ui.button(style=discord.ButtonStyle.red, emoji="🗑")
     async def delete(self, button: discord.ui.Button, interaction: discord.Interaction):
-        await interaction.response.defer()
-        await interaction.delete_original_response()
+        await interaction.response.send_message("You clicked the button!")
          
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
