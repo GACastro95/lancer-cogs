@@ -1,14 +1,15 @@
 import discord
-from discord.ui import Button, View
+from discord.ui import View
 import re
 import discord.ext
 from redbot.core import commands
 from typing import Optional
 
 class ButtonMenu(View):
-    @discord.ui.button(label="Delete")
+    @discord.ui.button(style=discord.ButtonStyle.red, emoji="🗑")
     async def delete(self, interaction, button):
-        await interaction.response.send_message("Test")
+        await interaction.response.defer()
+        await interaction.delete_original_response()
          
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
