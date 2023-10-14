@@ -31,7 +31,7 @@ class FxTwitter(commands.Cog):
         if matches:
             regex_rm = r"((https?):\/\/)?(www.)?(x|twitter?)\.com"
             result = re.sub(regex_rm, subst, url.split("?")[0], 1)
-            menu = ButtonMenu()
+            menu = ButtonMenu(timeout=None)
             await ctx.send(result, view=menu)
         else:
             await ctx.send("This is not a tweet", ephemeral=True)
