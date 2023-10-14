@@ -4,19 +4,9 @@ import re
 from redbot.core import commands
 from typing import Optional
 
-class CustomView(discord.ui.view):
-    def __init__(self):
-        super().__init__()
-        self.message = None
-
-@discord.ui.button(label="Click")
-async def click(self, interaction, button):
-    await interaction.response.send_message("Clicked!")
-    if self.message is not None:
-        await self.message.edit(view=None)  
-
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
+
     @commands.hybrid_command()
     async def twitter(self, ctx, url, download: Optional[bool] = False):
         """Returns Fxtwitter Link."""
@@ -29,7 +19,6 @@ class FxTwitter(commands.Cog):
         if matches:
             regex_rm = r"((https?):\/\/)?(www.)?(x|twitter?)\.com"
             result = re.sub(regex_rm, subst, url.split("?")[0], 1)
-            view = CustomView()
-            await ctx.send(result, view=view)
+            await ctx.send(result)
         else:
             await ctx.send("This is not a tweet", ephemeral=True)
