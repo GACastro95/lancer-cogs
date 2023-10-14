@@ -7,18 +7,13 @@ from typing import Optional
 class ButtonMenu(View):
     def __init__(self):
         super().__init__()
-
-        # Create buttons
         self.delete = Button(style=discord.ButtonStyle.red, emoji="🗑")
-
-        # Add buttons to the view
         self.add_item(self.delete)
     
     async def on_button_click(self, interaction: discord.Interaction):
-        await interaction.message.delete()
+        await interaction.response.defer()
+        await interaction.delete_original_response()
          
-         
-
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
 
