@@ -11,9 +11,9 @@ class FxTwitter(commands.Cog):
     button = Button(label="Click me!",
                     style=discord.ButtonStyle.red, emoji="🗑")
 
-    async def button_callback(interaction):
-        await interaction.delete()
-    button.callback = button_callback
+    # async def button_callback(interaction):
+    #     await interaction.delete()
+    # button.callback = button_callback
     view = View()
     view.add_item(button)
 
