@@ -7,7 +7,7 @@ class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
 
     @commands.hybrid_command()
-    async def twitter(self, ctx, url, download: bool):
+    async def twitter(self, ctx, url, download: bool = False):
         """Returns Fxtwitter Link."""
         if download:
             subst = "https://dl.fxtwitter.com"
