@@ -16,7 +16,7 @@ class ButtonMenu(View):
     
     async def on_button_click(self, interaction: discord.Interaction):
          if interaction.custom_id == 'delete':
-              await interaction.delete_original_response()
+              await interaction.message.delete()
          
          
 
