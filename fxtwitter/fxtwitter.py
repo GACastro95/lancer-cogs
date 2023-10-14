@@ -9,10 +9,16 @@ class ButtonMenu(View):
         super().__init__()
 
         # Create buttons
-        self.button1 = Button(style=discord.ButtonStyle.red, emoji="🗑")
+        self.delete = Button(style=discord.ButtonStyle.red, emoji="🗑", custom_id="delete")
 
         # Add buttons to the view
-        self.add_item(self.button1)
+        self.add_item(self.delete)
+    
+    async def on_button_click(self, interaction: discord.Interaction):
+         if interaction.custom_id == 'delete':
+              await interaction.delete_original_response()
+         
+         
 
 class FxTwitter(commands.Cog):
     """Converts twitter links to Fxtwitter links"""
