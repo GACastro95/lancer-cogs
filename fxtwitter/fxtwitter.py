@@ -40,3 +40,17 @@ class FxTwitter(commands.Cog):
             await ctx.send(result, view=menu)
         else:
             await ctx.send("This is not a tweet", ephemeral=True)
+
+    
+    @commands.hybrid_command()
+    async def tiktok(self, ctx, url):
+        """Returns Vxtiktok Link."""
+        regex = r"((https?):\/\/)?((vm|www?).)?(tiktok)\.com\/(@?.*?)\/(video)?(\/[0-9]{19})?"
+        matches = re.search(regex, url)
+        if matches:
+            regex_rm = r"tiktok"
+            result = re.sub(regex_rm, "vxtiktok", url, 1)
+            menu = ButtonMenu(timeout=None, member=ctx.author)
+            await ctx.send(result, view=menu)
+        else:
+            await ctx.send("This is not a tiktok", ephemeral=True)
