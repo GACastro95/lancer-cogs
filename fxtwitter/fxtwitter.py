@@ -49,7 +49,7 @@ class FxTwitter(commands.Cog):
         matches = re.search(regex, url)
         if matches:
             regex_rm = r"tiktok"
-            result = re.sub(regex_rm, "vxtiktok", url, 1)
+            result = re.sub(regex_rm, "vxtiktok", url.split("?")[0], 1)
             menu = ButtonMenu(timeout=None, member=ctx.author)
             await ctx.send(result, view=menu)
         else:
