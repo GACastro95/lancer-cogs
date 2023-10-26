@@ -31,7 +31,7 @@ class FxTwitter(commands.Cog):
                 subst = "dl.fxtwitter"
         else:
             subst = "fxtwitter"
-        regex = r"((https?):\/\/)?(www.)?(x|twitter)\.com(\/@?(\w){1,15})\/status\/[0-9]{19}"
+        regex = r"((https?):\/\/)?(www.)?(x|twitter)\.com(\/@?(\w){1,15})\/status\/[0-9](.*)\??"
         matches = re.search(regex, url)
         if matches:
             regex_rm = r"(x|twitter)"
@@ -45,7 +45,7 @@ class FxTwitter(commands.Cog):
     @commands.hybrid_command()
     async def tiktok(self, ctx, url):
         """Returns fxTikTok Link."""
-        regex = r"((https?):\/\/)?((vm|www?).)?(tiktok)\.com\/(@?.*?)\/(video)?(\/[0-9]{19})?"
+        regex = r"((https?):\/\/)?((vm|www?).)?(tiktok)\.com\/(@?.*?)\/(video)?(\/[0-9]).*\??"
         matches = re.search(regex, url)
         if matches:
             regex_rm = r"tiktok"
